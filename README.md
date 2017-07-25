@@ -18,6 +18,12 @@ written out via the ItemWriter, and then the transaction is committed.
 This commit interval is equals to the chunk size.
 This is configurable through the batchJob.xml file within the attribute commit-interval. 
 
+This application only reads a String array of lowercase letters ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j").
+
+Process the letters to uppercase.
+
+Writes the letters in chunks of 2.
+
 ## Motivation
 
 I wanted to have an easy example about Spring Batch using Chunk Oriented Processing with an XML configuration file.
