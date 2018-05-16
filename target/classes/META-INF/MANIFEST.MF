@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: SpringBatchWithXML
 Implementation-Version: 1.0
-Built-By: rafael.alcocer
+Built-By: Rafael Alcocer Caldera
 Implementation-Vendor-Id: rafael.alcocer.caldera
 Build-Jdk: 1.8.0_131
 Implementation-URL: http://projects.spring.io/spring-boot/SpringBatchW
