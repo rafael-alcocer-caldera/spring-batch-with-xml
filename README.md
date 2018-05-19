@@ -2,7 +2,7 @@
 
 The project is a Spring Boot Application that uses Spring Batch with an XML configuration file.
 
-It uses MySQL as a repository.
+It uses HSQLDB as a repository.
 
 The way to process a Step is Chunk Oriented Processing.
 
@@ -38,110 +38,111 @@ After clicking Enter if the Job is executed correctly you will see a response li
 
 ## Output Log Example
 
-2017-07-25 14:58:23.287  INFO 17176 --- [nio-8080-exec-1] o.s.b.c.l.support.SimpleJobLauncher      : Job: [FlowJob: [name=job]] launched with the following parameters: [{time=1501012703201}]
-2017-07-25 14:58:23.322  INFO 17176 --- [nio-8080-exec-1] o.s.batch.core.job.SimpleStepHandler     : Executing step: [step1]
+2018-05-19 14:16:00.283  INFO 2288 --- [           main] o.s.b.c.l.support.SimpleJobLauncher      : Job: [FlowJob: [name=job]] launched with the following parameters: [{}]
 
-2017-07-25 14:58:23.340  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Reader      : ##### Reader...read()...item: a, count: 1
+2018-05-19 14:16:00.741  INFO 2288 --- [           main] o.s.batch.core.job.SimpleStepHandler     : Executing step: [step1]
 
-2017-07-25 14:58:23.340  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Reader      : ##### Reader...read()...item: b, count: 2
+2018-05-19 14:16:00.959  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Reader      : ##### Reader...read()...item: a, count: 1
 
-2017-07-25 14:58:23.341  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item before: a
+2018-05-19 14:16:00.959  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Reader      : ##### Reader...read()...item: b, count: 2
 
-2017-07-25 14:58:23.341  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item after: A
+2018-05-19 14:16:00.973  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item before: a
 
-2017-07-25 14:58:23.341  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item before: b
+2018-05-19 14:16:00.978  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item after: A
 
-2017-07-25 14:58:23.342  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item after: B
+2018-05-19 14:16:00.978  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item before: b
 
-2017-07-25 14:58:23.342  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...START
+2018-05-19 14:16:00.979  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item after: B
 
-2017-07-25 14:58:23.342  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...item: A
+2018-05-19 14:16:00.990  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...START
 
-2017-07-25 14:58:23.342  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...item: B
+2018-05-19 14:16:00.990  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...item: A
 
-2017-07-25 14:58:23.342  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...END
+2018-05-19 14:16:00.990  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...item: B
 
-2017-07-25 14:58:23.348  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Reader      : ##### Reader...read()...item: c, count: 3
+2018-05-19 14:16:00.991  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...END
 
-2017-07-25 14:58:23.348  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Reader      : ##### Reader...read()...item: d, count: 4
+2018-05-19 14:16:01.010  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Reader      : ##### Reader...read()...item: c, count: 3
 
-2017-07-25 14:58:23.348  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item before: c
+2018-05-19 14:16:01.016  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Reader      : ##### Reader...read()...item: d, count: 4
 
-2017-07-25 14:58:23.348  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item after: C
+2018-05-19 14:16:01.017  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item before: c
 
-2017-07-25 14:58:23.348  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item before: d
+2018-05-19 14:16:01.017  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item after: C
 
-2017-07-25 14:58:23.348  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item after: D
+2018-05-19 14:16:01.017  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item before: d
 
-2017-07-25 14:58:23.348  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...START
+2018-05-19 14:16:01.017  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item after: D
 
-2017-07-25 14:58:23.348  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...item: C
+2018-05-19 14:16:01.018  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...START
 
-2017-07-25 14:58:23.348  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...item: D
+2018-05-19 14:16:01.026  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...item: C
 
-2017-07-25 14:58:23.348  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...END
+2018-05-19 14:16:01.026  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...item: D
 
-2017-07-25 14:58:23.353  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Reader      : ##### Reader...read()...item: e, count: 5
+2018-05-19 14:16:01.026  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...END
 
-2017-07-25 14:58:23.353  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Reader      : ##### Reader...read()...item: f, count: 6
+2018-05-19 14:16:01.052  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Reader      : ##### Reader...read()...item: e, count: 5
 
-2017-07-25 14:58:23.353  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item before: e
+2018-05-19 14:16:01.058  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Reader      : ##### Reader...read()...item: f, count: 6
 
-2017-07-25 14:58:23.353  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item after: E
+2018-05-19 14:16:01.058  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item before: e
 
-2017-07-25 14:58:23.353  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item before: f
+2018-05-19 14:16:01.071  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item after: E
 
-2017-07-25 14:58:23.353  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item after: F
+2018-05-19 14:16:01.071  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item before: f
 
-2017-07-25 14:58:23.353  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...START
+2018-05-19 14:16:01.072  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item after: F
 
-2017-07-25 14:58:23.353  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...item: E
+2018-05-19 14:16:01.072  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...START
 
-2017-07-25 14:58:23.353  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...item: F
+2018-05-19 14:16:01.072  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...item: E
 
-2017-07-25 14:58:23.353  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...END
+2018-05-19 14:16:01.072  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...item: F
 
-2017-07-25 14:58:23.358  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Reader      : ##### Reader...read()...item: g, count: 7
+2018-05-19 14:16:01.072  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...END
 
-2017-07-25 14:58:23.358  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Reader      : ##### Reader...read()...item: h, count: 8
+2018-05-19 14:16:01.105  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Reader      : ##### Reader...read()...item: g, count: 7
 
-2017-07-25 14:58:23.359  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item before: g
+2018-05-19 14:16:01.105  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Reader      : ##### Reader...read()...item: h, count: 8
 
-2017-07-25 14:58:23.359  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item after: G
+2018-05-19 14:16:01.105  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item before: g
 
-2017-07-25 14:58:23.359  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item before: h
+2018-05-19 14:16:01.106  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item after: G
 
-2017-07-25 14:58:23.359  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item after: H
+2018-05-19 14:16:01.106  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item before: h
 
-2017-07-25 14:58:23.359  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...START
+2018-05-19 14:16:01.106  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item after: H
 
-2017-07-25 14:58:23.359  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...item: G
+2018-05-19 14:16:01.112  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...START
 
-2017-07-25 14:58:23.359  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...item: H
+2018-05-19 14:16:01.112  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...item: G
 
-2017-07-25 14:58:23.359  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...END
+2018-05-19 14:16:01.112  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...item: H
 
-2017-07-25 14:58:23.363  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Reader      : ##### Reader...read()...item: i, count: 9
+2018-05-19 14:16:01.112  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...END
 
-2017-07-25 14:58:23.363  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Reader      : ##### Reader...read()...item: j, count: 10
+2018-05-19 14:16:01.166  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Reader      : ##### Reader...read()...item: i, count: 9
 
-2017-07-25 14:58:23.364  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item before: i
+2018-05-19 14:16:01.168  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Reader      : ##### Reader...read()...item: j, count: 10
 
-2017-07-25 14:58:23.364  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item after: I
+2018-05-19 14:16:01.190  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item before: i
 
-2017-07-25 14:58:23.364  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item before: j
+2018-05-19 14:16:01.199  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item after: I
 
-2017-07-25 14:58:23.364  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item after: J
+2018-05-19 14:16:01.201  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item before: j
 
-2017-07-25 14:58:23.364  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...START
+2018-05-19 14:16:01.210  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Processor   : ##### Processor...process()...item after: J
 
-2017-07-25 14:58:23.364  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...item: I
+2018-05-19 14:16:01.210  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...START
 
-2017-07-25 14:58:23.364  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...item: J
+2018-05-19 14:16:01.220  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...item: I
 
-2017-07-25 14:58:23.364  INFO 17176 --- [nio-8080-exec-1] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...END
+2018-05-19 14:16:01.220  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...item: J
 
-2017-07-25 14:58:23.388  INFO 17176 --- [nio-8080-exec-1] o.s.b.c.l.support.SimpleJobLauncher      : Job: [FlowJob: [name=job]] completed with the following parameters: [{time=1501012703201}] and the following status: [COMPLETED]
+2018-05-19 14:16:01.221  INFO 2288 --- [           main] r.a.caldera.springbatch.step.Writer      : ##### Writer...write()...END
+
+2018-05-19 14:16:01.328  INFO 2288 --- [           main] o.s.b.c.l.support.SimpleJobLauncher      : Job: [FlowJob: [name=job]] completed with the following parameters: [{}] and the following status: [COMPLETED]
 
 ## License
 

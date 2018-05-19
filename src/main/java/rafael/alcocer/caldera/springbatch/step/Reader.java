@@ -29,25 +29,25 @@ import org.springframework.batch.item.ItemReader;
  */
 public class Reader implements ItemReader<String> {
 
-    private String[] items = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" };
+	private String[] items = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" };
 
-    private int count = 0;
+	private int count = 0;
 
-    private static Logger logger = LoggerFactory.getLogger(Reader.class);
+	private static Logger logger = LoggerFactory.getLogger(Reader.class);
 
-    @Override
-    public String read() throws Exception {
-	if (count < items.length) {
-	    String item = items[count++];
-	    
-	    logger.info("##### Reader...read()...item: " + item + ", count: " + count);
-	    
-	    return item;
-	} else {
-	    count = 0;
+	@Override
+	public String read() throws Exception {
+		if (count < items.length) {
+			String item = items[count++];
+
+			logger.info("##### Reader...read()...item: " + item + ", count: " + count);
+
+			return item;
+		} else {
+			count = 0;
+		}
+
+		return null;
 	}
-
-	return null;
-    }
 
 }

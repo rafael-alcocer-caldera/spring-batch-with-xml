@@ -31,17 +31,17 @@ import org.springframework.batch.item.ItemWriter;
  */
 public class Writer implements ItemWriter<String> {
 
-    private static Logger logger = LoggerFactory.getLogger(Writer.class);
+	private static Logger logger = LoggerFactory.getLogger(Writer.class);
 
-    @Override
-    public void write(List<? extends String> items) throws Exception {
-	logger.info("##### Writer...write()...START");
-	
-	for (String item : items) {
-	    logger.info("##### Writer...write()...item: " + item);
+	@Override
+	public void write(List<? extends String> items) throws Exception {
+		logger.info("##### Writer...write()...START");
+
+		for (String item : items) {
+			logger.info("##### Writer...write()...item: " + item);
+		}
+
+		logger.info("##### Writer...write()...END");
 	}
-	
-	logger.info("##### Writer...write()...END");
-    }
 
 }

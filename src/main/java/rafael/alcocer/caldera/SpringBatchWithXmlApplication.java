@@ -15,10 +15,10 @@
  */
 package rafael.alcocer.caldera;
 
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
-import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 
 /**
  * Spring Batch Application with Spring Boot using XML configuration files.
@@ -43,7 +43,7 @@ import org.springframework.batch.core.configuration.annotation.EnableBatchProces
 @ImportResource("classpath:batchJob.xml")
 public class SpringBatchWithXmlApplication {
 
-    public static void main(String[] args) {
-	SpringApplication.run(SpringBatchWithXmlApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBatchWithXmlApplication.class, args);
+	}
 }

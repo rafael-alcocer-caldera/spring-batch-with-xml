@@ -28,17 +28,17 @@ import org.springframework.batch.item.ItemProcessor;
  *
  */
 public class Processor implements ItemProcessor<String, String> {
-    
-    private static Logger logger = LoggerFactory.getLogger(Processor.class);
 
-    @Override
-    public String process(String item) throws Exception {
-	String itemProcessed = item.toUpperCase();
-	
-	logger.info("##### Processor...process()...item before: " + item);
-	logger.info("##### Processor...process()...item after: " + itemProcessed);
-	
-	return itemProcessed;
-    }
+	private static Logger logger = LoggerFactory.getLogger(Processor.class);
+
+	@Override
+	public String process(String item) throws Exception {
+		String itemProcessed = item.toUpperCase();
+
+		logger.info("##### Processor...process()...item before: " + item);
+		logger.info("##### Processor...process()...item after: " + itemProcessed);
+
+		return itemProcessed;
+	}
 
 }
