@@ -172,6 +172,13 @@ But if your folder is in your workspace the name will be: spring-batch-with-xml-
 This is cleaner that the other. No need to do other things.
 But remember that you are not copying this folder into your workspace.
 
+Or
+
+Copy the folder into your workspace and change the name to  from spring-batch-with-xml-master to spring-batch-with-xml
+Within Eclipse you can choose Import... -> Maven -> Existing Maven Projects 
+Root directory and browse.
+That's all.
+
 ## License
 
 All work is under Apache 2.0 license
