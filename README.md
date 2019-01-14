@@ -30,11 +30,13 @@ I wanted to have an easy example about Spring Batch using Chunk Oriented Process
 
 ## Tests
 
-In Eclipse use: Run As -> Spring Boot App
+In Eclipse use: 
 
-Then open a browser with the following URL: http://localhost:8080/executeJob
+Run As -> Spring Boot App
 
-After clicking Enter if the Job is executed correctly you will see a response like this: Job Executed!! 1501012703389
+or
+
+Run As -> Java Application
 
 ## Output Log Example
 
